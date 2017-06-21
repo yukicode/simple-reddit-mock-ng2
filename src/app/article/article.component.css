@@ -1,0 +1,52 @@
+.story {
+    margin: auto 15%;
+}
+
+.vote {
+    color: mediumaquamarine;
+    font-weight: 700;
+    border-radius: 3px;
+    border: 1px solid mediumaquamarine;
+    padding: 5px;
+    margin: auto 5px;
+}
+
+.image {
+    background-color: mediumaquamarine;
+    max-width: 150px;
+    margin: auto;
+    text-align: center;
+    border-radius: 3px;
+}
+
+@media screen and (max-width: 700px) {
+    .image {
+        max-width: 80px;
+    }
+    h3 {
+        font-size: 14px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    .vote {
+        font-size: 10px;
+    }   
+}
+
+@media screen and (max-width: 450px) {
+    .image {
+        max-width: 50px;
+    }
+
+    .image>h3 {
+        display: none;
+    }
+
+    .btn-description {
+        display: none;
+    }
+
+}

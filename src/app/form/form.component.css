@@ -1,0 +1,9 @@
+form {
+    margin: auto 15%;
+}
+.main-form {
+    background-color: mediumaquamarine;
+    border-radius: 3px;
+    margin: 10px;
+    padding: 30px;
+}

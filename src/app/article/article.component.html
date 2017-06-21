@@ -1,0 +1,13 @@
+<div class="story row">
+  <div class="image col-xs-3">
+    <h2>{{story.upvote - story.downvote}}</h2>
+    <h3>POINTS</h3>
+    <br>
+  </div>
+  <div class="content col-xs-9">
+    <h3>{{story.title}}</h3>
+    <p>{{getDomain()}}</p>
+    <button class="vote btn btn-default" (click)="upVote()">&#8679; <span class="btn-description">Up Vote: </span>{{story.upvote}}</button> 
+    <button class="vote btn btn-default" (click)="downVote()">&#8681; <span class="btn-description">Down Vote: </span>{{story.downvote}}</button>
+  </div>
+</div>
