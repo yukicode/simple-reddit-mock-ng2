@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { DataService } from '../shared/data.service';
+import { Story } from '../shared/story';
 
 @Component({
   selector: 'app-article',
@@ -8,7 +9,7 @@ import { DataService } from '../shared/data.service';
 })
 export class ArticleComponent implements OnInit {
 
-  @Input() story;
+  @Input() story: Story;
 
   constructor(private ds: DataService) { }
 
@@ -16,11 +17,11 @@ export class ArticleComponent implements OnInit {
   }
 
   getDomain() : string{
-    let result = '';
+    let result = '', splited = [];
     if(this.story && this.story.link){
       try {
-        result = this.story.link.split('//');
-        result = result.length >1 ? result[1] : result[0];
+        splited = this.story.link.split('//');
+        result = splited.length >1 ? splited[1] : splited[0];
         result = result.split('/')[0];
       } catch(err) {
         console.log(err);

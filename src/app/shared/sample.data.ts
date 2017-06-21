@@ -1,37 +1,41 @@
-export const STORIES = [
-    {
-        title: "W3Schools",
-        link: "https://www.w3schools.com/",
-        upvote: 50,
-        downvote: 10,
-        id: 9001,
-    },
-    {
-        title: "Unicode Character Table",
-        link: "https://unicode-table.com/en/",
-        upvote: 11,
-        downvote: 0,
-        id: 9002,
-    },
-    {
-        title: "Reddit",
-        link: "https://www.reddit.com/",
-        upvote: 100,
-        downvote: 10,
-        id:  9003,
-    },
-    {
-        title: "Hackernoon",
-        link: "https://hackernoon.com/",
-        upvote: 20,
-        downvote: 1,
-        id: 9004,
-    },
-    {
-        title: "Youtube",
-        link: "https://www.youtube.com/",
-        upvote: 200,
-        downvote: 100,
-        id: 9005,
-    },
+import { Story } from './story';
+
+export const STORIES: Story[] = [
+    new Story(
+        "W3Schools",
+        "https://www.w3schools.com/",
+        50,
+        10,
+        9001
+    ),
+    new Story(
+        "Unicode Character Table",
+        "https://unicode-table.com/en/",
+        11,
+        0,
+        9002
+    ),
+    new Story(
+        "Reddit",
+        "https://www.reddit.com/",
+        100,
+        10,
+        9003
+    ),
+    new Story(
+        "Hackernoon",
+        "https://hackernoon.com/",
+        20,
+        1,
+        9004
+    ),
+    new Story(
+        "Youtube",
+        "https://www.youtube.com/",
+        200,
+        100,
+        9005
+    ),
 ];
+
+

@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import { STORIES } from './sample.data';
+import { Story } from './story';
 
 @Injectable()
 export class DataService {
 
-  list : any[];
+  list : Story[];
   defaultId: number;
 
   constructor(){
@@ -13,18 +14,14 @@ export class DataService {
   }
 
   addStory(_title: string, _link: string) {
-    this.list.push({
-      title: _title, 
-      link: _link,
-      upvote: 0,
-      downvote: 0,
-      id: this.defaultId++
-    });
+    this.list.push(
+      new Story(_title, _link, 0, 0, this.defaultId++)
+    );
   }
 
-  getStories(): any[] {
-    return this.list.sort((a,b)=>{
-      return -(a.upvote - b.upvote - a.downvote + b.downvote);
+  getStories(): Story[] {
+    return this.list.sort((a: Story,b: Story)=>{
+      return b.score - a.score;
     });
   }
 

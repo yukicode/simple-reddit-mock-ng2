@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../shared/data.service';
+import { Story } from '../shared/story';
 
 @Component({
   selector: 'app-article-list',
@@ -10,7 +11,7 @@ export class ArticleListComponent implements OnInit {
 
   constructor(private ds: DataService) { }
 
-  stories: any[];
+  stories: Story[];
 
   ngOnInit() {
     this.stories = this.ds.getStories();
