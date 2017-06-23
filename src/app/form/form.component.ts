@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { DataService } from '../shared/data.service';
 
 @Component({
@@ -6,15 +6,12 @@ import { DataService } from '../shared/data.service';
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.css']
 })
-export class FormComponent implements OnInit {
+export class FormComponent {
 
   title: string;
   link: string;
 
   constructor(private ds: DataService) { }
-
-  ngOnInit() {
-  }
 
   onSubmit(): void {
     this.ds.addStory(this.title, this.link);
