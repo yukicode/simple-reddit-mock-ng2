@@ -26,10 +26,14 @@ export class DataService {
   }
 
   upVote(id: number): void {
-    this.list.find( story => story.id === id).upvote++;
+    let story = this.list.find( story => story.id === id);
+    if( !story ) { return; }
+    story.upvote++;
   }
 
   downVote(id: number): void {
-    this.list.find( story => story.id === id).downvote++;
+    let story = this.list.find( story => story.id === id);
+    if( !story ) { return; }
+    story.downvote++;
   }
 }

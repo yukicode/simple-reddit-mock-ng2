@@ -6,7 +6,7 @@
   </div>
   <div class="content col-xs-9">
     <h3 class="story-title">{{story.title}}</h3>
-    <p class="story-domain">{{getDomain()}}</p>
+    <p class="story-domain">{{story.getDomain()}}</p>
     <button class="vote upvote btn btn-default" (click)="upVote()">&#8679; <span class="btn-description">Up Vote: </span><span class="upvote-count">{{story.upvote}}</span></button> 
     <button class="vote downvote btn btn-default" (click)="downVote()">&#8681; <span class="btn-description">Down Vote: </span><span class="downvote-count">{{story.downvote}}</span></button>
   </div>

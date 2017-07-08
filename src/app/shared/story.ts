@@ -41,4 +41,12 @@ export class Story {
         this._downvote = v;
         this._score = this._upvote - v;
     }
+
+    public getDomain(): string {
+        if (!this.link) { return ''; }
+        let splited = this.link.split('//');
+        let result = splited.length >1 ? splited[1] : splited[0];
+        result = result.split('/')[0];
+        return result;
+    }
 }

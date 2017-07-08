@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { DataService } from '../shared/data.service';
 import { Story } from '../shared/story';
 
@@ -7,28 +7,11 @@ import { Story } from '../shared/story';
   templateUrl: './article.component.html',
   styleUrls: ['./article.component.css']
 })
-export class ArticleComponent implements OnInit {
+export class ArticleComponent {
 
   @Input() story: Story;
 
   constructor(private ds: DataService) { }
-
-  ngOnInit() {
-  }
-
-  getDomain() : string{
-    let result = '', splited = [];
-    if(this.story && this.story.link){
-      try {
-        splited = this.story.link.split('//');
-        result = splited.length >1 ? splited[1] : splited[0];
-        result = result.split('/')[0];
-      } catch(err) {
-        console.log(err);
-      }
-      return result;
-    }
-  }
 
   upVote(){
     this.ds.upVote(this.story.id);
